@@ -15,13 +15,29 @@
             height: 200px;
             width: 200px;
             border-radius: 50%;
-            transition: transform 1s cubic-bezier(0.69, -0.24, 0.49, 1.96);
-            margin: 0 auto;
+            animation: left-to-right 1s ease-in forwards infinite alternate;
         }
 
         .parent:hover .child {
             background-color: rgb(236, 235, 147);
-            transform: translatey(200%);
+           animation-play-state: paused;
+        }
+
+        @keyframes left-to-right {
+            0% {
+                transform: translateX(0)
+            }
+            33% {
+                transform: translateY(200%);
+                background-color: rgb(231, 90, 114);
+            }
+           66% {
+               transform: translateX(200%) translateY(200%);
+           }
+            100% {
+                transform: translateX(200%);
+                background-color: purple;
+            }
         }
     </style>
     <title>CSS animation</title>
